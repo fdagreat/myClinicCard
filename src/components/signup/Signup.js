@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators } from "../../store/actions-creators";
 import { useHistory } from "react-router";
 import classes from "./Signup.module.css";
 
 const Signup = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+  const store = useSelector((store) => store);
+  const { signup } = bindActionCreators(actionCreators, dispatch);
+  //setting up state to store data from the form
+
+  const [userData, setUserData] = useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    password2: "",
+  });
+
+  const handleChange = (event) => {
+    setUserData({ ...userData, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    signup(userData);
+    setUserData({
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      password2: "",
+    });
+  };
 
   const signinHandle = () => {
     history.push("/");
   };
+
+  console.log(store);
   return (
     <div className={classes.signup}>
       <div className={classes.banner}></div>
@@ -15,13 +48,15 @@ const Signup = () => {
         <h3 className={classes.title}>my Clinic Card</h3>
         <p className={classes["sub-title"]}>Sign Up</p>
         <div className={classes.form}>
-          <form action="">
+          <form action="" onSubmit={handleSubmit}>
             <div className={classes["form-control"]}>
               <input
                 type="text"
                 name="firstname"
                 className="form-input"
                 placeholder="Enter First Name"
+                value={userData.firstname}
+                onChange={handleChange}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -30,6 +65,8 @@ const Signup = () => {
                 name="lastname"
                 className="form-input"
                 placeholder="Enter Last Name"
+                value={userData.lastname}
+                onChange={handleChange}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -38,6 +75,8 @@ const Signup = () => {
                 name="email"
                 className="form-input"
                 placeholder="Enter email or phone number"
+                value={userData.email}
+                onChange={handleChange}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -46,6 +85,8 @@ const Signup = () => {
                 name="password"
                 className="form-input"
                 placeholder="Enter password"
+                value={userData.password}
+                onChange={handleChange}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -54,10 +95,16 @@ const Signup = () => {
                 name="password2"
                 className="form-input"
                 placeholder="Comfirm password"
+                value={userData.password2}
+                onChange={handleChange}
               />
             </div>
             <div className="form-control">
-              <button type="submit" className={classes.btn}>
+              <button
+                type="submit"
+                className={classes.btn}
+                onClick={handleSubmit}
+              >
                 Sign Up
               </button>
             </div>
