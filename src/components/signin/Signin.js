@@ -1,9 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router";
+import Logo from "../Logo/Logo";
 import classes from "./Signin.module.css";
 
 const Signin = () => {
   const history = useHistory();
+
+  const handleSignin = () => {
+    history.push("/Dashboard");
+  };
 
   const signupHandle = () => {
     history.push("/signup");
@@ -12,10 +17,10 @@ const Signin = () => {
     <div className={classes.signin}>
       <div className={classes.banner}></div>
       <div className={classes["login-form"]}>
-        <h3 className={classes.title}>my Clinic Card</h3>
+        <Logo />
         <p className={classes["sub-title"]}>Sign In</p>
         <div className={classes.form}>
-          <form action="">
+          <form method="POST">
             <div className={classes["form-control"]}>
               <input
                 type="text"
@@ -33,7 +38,11 @@ const Signin = () => {
               />
             </div>
             <div className="form-control">
-              <button type="submit" className={classes.btn}>
+              <button
+                type="submit"
+                className={classes.btn}
+                onClick={handleSignin}
+              >
                 Sign In
               </button>
             </div>

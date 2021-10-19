@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { actionCreators } from "../../store/actions-creators";
 import { useHistory } from "react-router";
 import classes from "./Signup.module.css";
+import Logo from "../Logo/Logo";
 
 const Signup = () => {
   const history = useHistory();
@@ -20,22 +21,45 @@ const Signup = () => {
     password2: "",
   });
 
+  const [message, setMessage] = useState("");
+  const [borderColor, setBorderColor] = useState("");
+
   const handleChange = (event) => {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
-
+  //method to capture form data and validate before saving to the database;
   const handleSubmit = (event) => {
     event.preventDefault();
-    signup(userData);
-    setUserData({
-      firstname: "",
-      lastname: "",
-      email: "",
-      password: "",
-      password2: "",
-    });
+    const passwordMatch =
+      userData.password !== userData.password2 ? true : false;
+
+    if (
+      userData.firstname === "" ||
+      userData.last === "" ||
+      userData.email === "" ||
+      userData.password === "" ||
+      userData.password2 === ""
+    ) {
+      history.push("/signup");
+      setBorderColor("red");
+    } else if (passwordMatch) {
+      history.push("/signup");
+      setMessage("Password do not match");
+      setBorderColor("");
+    } else {
+      signup(userData);
+      history.push("/");
+      setUserData({
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        password2: "",
+      });
+    }
   };
 
+  //method to direct user to sign in page
   const signinHandle = () => {
     history.push("/");
   };
@@ -45,10 +69,10 @@ const Signup = () => {
     <div className={classes.signup}>
       <div className={classes.banner}></div>
       <div className={classes["signup-form"]}>
-        <h3 className={classes.title}>my Clinic Card</h3>
+        <Logo />
         <p className={classes["sub-title"]}>Sign Up</p>
         <div className={classes.form}>
-          <form action="" onSubmit={handleSubmit}>
+          <form method="POST" onSubmit={handleSubmit}>
             <div className={classes["form-control"]}>
               <input
                 type="text"
@@ -57,6 +81,8 @@ const Signup = () => {
                 placeholder="Enter First Name"
                 value={userData.firstname}
                 onChange={handleChange}
+                required
+                style={{ border: `1px solid ${borderColor}` }}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -67,6 +93,8 @@ const Signup = () => {
                 placeholder="Enter Last Name"
                 value={userData.lastname}
                 onChange={handleChange}
+                required
+                style={{ border: `1px solid ${borderColor}` }}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -77,6 +105,8 @@ const Signup = () => {
                 placeholder="Enter email or phone number"
                 value={userData.email}
                 onChange={handleChange}
+                required
+                style={{ border: `1px solid ${borderColor}` }}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -87,6 +117,8 @@ const Signup = () => {
                 placeholder="Enter password"
                 value={userData.password}
                 onChange={handleChange}
+                required
+                style={{ border: `1px solid ${borderColor}` }}
               />
             </div>
             <div className={classes["form-control"]}>
@@ -97,7 +129,12 @@ const Signup = () => {
                 placeholder="Comfirm password"
                 value={userData.password2}
                 onChange={handleChange}
+                required
+                style={{ border: `1px solid ${borderColor}` }}
               />
+            </div>
+            <div className={classes["form-control"]}>
+              <p className={classes.message}>{message}</p>
             </div>
             <div className="form-control">
               <button

@@ -1,0 +1,75 @@
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  gap: 1rem;
+  height: 100vh;
+  padding: 0 5rem;
+}
+/* menu section */
+.menu {
+  padding: 0.55rem;
+}
+.menu_header,
+.menu_items {
+  padding: 2rem 0rem;
+}
+.menu_header {
+  text-align: center;
+}
+.menu_header p {
+  color: #34d399;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.menu_lists {
+  list-style-type: none;
+}
+.menu__list_item {
+  margin: 1rem 0;
+  font-weight: 400;
+  padding: 0.55rem 0;
+  cursor: pointer;
+}
+
+/* content section */
+.content {
+  padding: 0.25rem;
+}
+.content_header {
+  padding: 1rem 1rem;
+}
+.Welcome {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #999;
+}
+.add_appointment {
+  padding: 0.5rem 0rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.notification {
+  display: flex;
+  align-items: center;
+}
+.notification div {
+  margin: 0.5rem;
+}
+.profile_image {
+  width: 45px;
+  height: 45px;
+}
+.profile_image img {
+  width: 100%;
+  border-radius: 100%;
+}
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+}
