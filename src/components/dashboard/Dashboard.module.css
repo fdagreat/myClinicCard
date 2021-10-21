@@ -4,6 +4,7 @@
   gap: 1rem;
   height: 100vh;
   padding: 0 0.5rem;
+  background-color: #f3f4f6;
 }
 /* menu section */
 .menu {
@@ -63,13 +64,17 @@
   font-weight: 600;
 }
 .btn {
-  padding: 0.5rem 1.75rem;
-  cursor: pointer;
-  border: none;
-  background: #34d399;
-  color: #fff;
-  font-size: 0.85em;
-  font-weight: 600;
+  padding: 0.5rem 1.75rem !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: #34d399 !important;
+  color: #fff !important;
+  font-size: 0.85em !important;
+  font-weight: 600 !important;
+}
+.btn:focus {
+  outline: none;
+  border-style: none;
 }
 .col-2 {
   background-color: #fff;
