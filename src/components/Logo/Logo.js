@@ -4,7 +4,7 @@ import classes from "./Logo.module.css";
 
 const Logo = () => {
   return (
-    <div>
+    <div style={{ textAlign: "ecenter" }}>
       <Icon />
       <div>
         <h3 className={classes.logo_text}>Clinic Card</h3>
