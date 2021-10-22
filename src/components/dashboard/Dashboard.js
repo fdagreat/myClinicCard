@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import classes from "./Dashboard.module.css";
 import profileImage from "../../assets/avartar.jpg";
 import { GoLightBulb, GoDiff } from "react-icons/go";
@@ -10,19 +11,23 @@ import {
 import { RiSettings3Line, RiFunctionFill } from "react-icons/ri";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import CalendarComponent from "../calendar/CalendarComponent";
 
 const Dashboard = () => {
+  const history = useHistory();
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleSignout = () => {
+    history.goBack("/");
+  };
 
   return (
     <>
       <div className={classes.grid}>
         {/* menu column */}
         <div className={classes.menu}>
-          <div className={classes.topbar}>
+          <div className={classes.topbar} onClick={handleSignout}>
             <span>
               <IoLogOutOutline className={classes.icon} />
             </span>
@@ -55,7 +60,6 @@ const Dashboard = () => {
         </div>
         {/* content column */}
         <div className={classes.content}>
-          <div className="topbar_content">kakak</div>
           <div className={classes.main}>
             <div className={classes["col-1"]}>
               <div>
@@ -109,8 +113,12 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-            <div className={classes["col-3"]}>Calendar</div>
+            {/* col3 */}
+            <div className={classes["col-3"]}>
+              <CalendarComponent />
+            </div>
             <div className={classes["col-4"]}>health Reminder</div>
+            <div className={classes["col-5"]}>other contents</div>
           </div>
         </div>
       </div>

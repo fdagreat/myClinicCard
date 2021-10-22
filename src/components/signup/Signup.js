@@ -136,7 +136,7 @@ const Signup = () => {
             <div className={classes["form-control"]}>
               <p className={classes.message}>{message}</p>
             </div>
-            <div className="form-control">
+            <div lassName={classes["form-control"]}>
               <button
                 type="submit"
                 className={classes.btn}

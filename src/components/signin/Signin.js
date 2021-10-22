@@ -37,11 +37,12 @@ const Signin = () => {
                 placeholder="Enter password"
               />
             </div>
-            <div className="form-control">
+            <div className={classes["form-control"]}>
               <button
                 type="submit"
-                className={classes.btnn}
+                className={classes.btn}
                 onClick={handleSignin}
+                style={{ border: "none" }}
               >
                 Sign In
               </button>
