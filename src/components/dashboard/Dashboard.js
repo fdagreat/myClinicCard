@@ -14,10 +14,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CalendarComponent from "../calendar/CalendarComponent";
 
 const Dashboard = () => {
+  // hook to track url visited
   const history = useHistory();
+  //state to hold show or hide modal events and store tasks data
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+
+  const handleClose = (event) => {
+    setShow(false);
+  };
   const handleShow = () => setShow(true);
+
+  const [tasks, setTasks] = useState({
+    taskname: "",
+    time: "00:00",
+    priority: "High",
+  });
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+    setTasks({ ...tasks, [event.target.name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    setTasks({ taskname: "", time: "", priority: "High" });
+  };
+  //function to logout user
   const handleSignout = () => {
     history.goBack("/");
   };
@@ -63,12 +86,12 @@ const Dashboard = () => {
           <div className={classes.main}>
             <div className={classes["col-1"]}>
               <div>
-                <p className={classes.name}>Hello Khadija!</p>
+                <p className={classes.name}>Hello Khadija! 🙂</p>
               </div>
               <div style={{ marginTop: ".5rem", marginBottom: ".75rem" }}>
                 <p style={{ fontSize: ".9em" }}>
                   Don't forgrt to add your activities to keep your day
-                  organised. Daily exercices are very important.
+                  organised. Daily exercises are very important.
                 </p>
               </div>
               <div style={{ marginTop: ".6rem" }}>
@@ -100,11 +123,11 @@ const Dashboard = () => {
               </div>
               <div className={classes.badge}>
                 <div>
-                  <span>0+</span>
+                  <span> A +</span>
                   <p>Blood</p>
                 </div>
                 <div>
-                  <span>150cm</span>
+                  <span>150 cm</span>
                   <p>Heigh</p>
                 </div>
                 <div>
@@ -117,8 +140,32 @@ const Dashboard = () => {
             <div className={classes["col-3"]}>
               <CalendarComponent />
             </div>
-            <div className={classes["col-4"]}>health Reminder</div>
-            <div className={classes["col-5"]}>other contents</div>
+            <div className={classes["col-4"]}>
+              <p
+                style={{
+                  color: "#34d399",
+                  fontWeight: "600",
+                  fontSize: "1.05em",
+                }}
+              >
+                Health Activities Today
+              </p>
+              <p>No activities for today!</p>
+            </div>
+            <div className={classes["col-5"]}>
+              <div>
+                <h4
+                  style={{
+                    color: "#34d399",
+                    fontWeight: "600",
+                    fontSize: "1.25em",
+                  }}
+                >
+                  My Health Trends
+                </h4>
+              </div>
+              <div>Display graph</div>
+            </div>
           </div>
         </div>
       </div>
@@ -126,17 +173,63 @@ const Dashboard = () => {
       <div>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>New Activity</Modal.Title>
+            <Modal.Title
+              style={{
+                fontSize: "1.05em",
+                fontWeight: "600",
+                color: "#34d399",
+              }}
+            >
+              Add New Activity
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Body>
+            <div>
+              <form action="" method="POST" onSubmit={handleSubmit}>
+                <div className={classes.form_control}>
+                  <input
+                    type="text"
+                    placeholder="Add a task"
+                    name="taskname"
+                    value={tasks.taskname}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className={classes.form_control}>
+                  <input
+                    type="time"
+                    value={tasks.time}
+                    name="time"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className={classes.form_control}>
+                  <p style={{ marginTop: ".5rem" }}>Priority</p>
+                </div>
+                <div className={classes.form_control}>
+                  <select
+                    name="priority"
+                    id=""
+                    onChange={handleChange}
+                    value={tasks.priority}
+                  >
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+          </Modal.Body>
           <Modal.Footer>
             <Button
               variant="primary"
               onClick={handleClose}
               className={classes.btn}
               style={{ borderRadius: "0px" }}
+              type="submit"
             >
-              Save Changes
+              Save
             </Button>
           </Modal.Footer>
         </Modal>

@@ -188,3 +188,16 @@
   padding: 1rem;
   background: #fff;
 }
+
+/* modal form */
+
+.form_control input {
+  width: 100%;
+  padding: 0.35rem 1rem;
+  margin: 0.25rem 0rem;
+}
+.form_control select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0rem;
+}
