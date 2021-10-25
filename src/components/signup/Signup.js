@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../store/actions-creators";
 import { useHistory } from "react-router";
@@ -9,7 +9,6 @@ import Logo from "../Logo/Logo";
 const Signup = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const store = useSelector((store) => store);
   const { signup } = bindActionCreators(actionCreators, dispatch);
   //setting up state to store data from the form
 
@@ -64,7 +63,6 @@ const Signup = () => {
     history.push("/");
   };
 
-  console.log(store);
   return (
     <div className={classes.signup}>
       <div className={classes.banner}></div>

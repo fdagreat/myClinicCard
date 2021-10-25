@@ -17,3 +17,16 @@ export const signoutAction = (user) => {
     payload: user,
   };
 };
+
+export const addTask = (task) => {
+  return {
+    type: action_types.ADD_TASK,
+    payload: task,
+  };
+};
+export const removeTask = (id) => {
+  return {
+    type: action_types.REMOVE_TASK,
+    payload: id,
+  };
+};

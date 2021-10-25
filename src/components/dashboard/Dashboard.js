@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import classes from "./Dashboard.module.css";
 import profileImage from "../../assets/avartar.jpg";
 import { GoLightBulb, GoDiff } from "react-icons/go";
+
 import {
   IoLogOutOutline,
   IoChatbubblesOutline,
@@ -12,6 +13,7 @@ import { RiSettings3Line, RiFunctionFill } from "react-icons/ri";
 import { Modal, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CalendarComponent from "../calendar/CalendarComponent";
+import ActivityForm from "../Form/ActivityForm";
 
 const Dashboard = () => {
   // hook to track url visited
@@ -19,32 +21,18 @@ const Dashboard = () => {
   //state to hold show or hide modal events and store tasks data
   const [show, setShow] = useState(false);
 
-  const handleClose = (event) => {
+  const handleClose = () => {
     setShow(false);
   };
   const handleShow = () => setShow(true);
 
-  const [tasks, setTasks] = useState({
-    taskname: "",
-    time: "00:00",
-    priority: "High",
-  });
-
-  const handleChange = (event) => {
-    const value = event.target.value;
-    setTasks({ ...tasks, [event.target.name]: value });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    setTasks({ taskname: "", time: "", priority: "High" });
-  };
   //function to logout user
   const handleSignout = () => {
     history.goBack("/");
   };
 
+  // const store = useSelector((store) => store);
+  // console.log(store);
   return (
     <>
       <div className={classes.grid}>
@@ -86,7 +74,7 @@ const Dashboard = () => {
           <div className={classes.main}>
             <div className={classes["col-1"]}>
               <div>
-                <p className={classes.name}>Hello Khadija! 🙂</p>
+                <p className={classes.name}>Hello Alice! 🙂</p>
               </div>
               <div style={{ marginTop: ".5rem", marginBottom: ".75rem" }}>
                 <p style={{ fontSize: ".9em" }}>
@@ -105,7 +93,7 @@ const Dashboard = () => {
                 <img src={profileImage} alt="" />
               </div>
               <div className={classes.info}>
-                <p>Khadija Juma</p>
+                <p>Alice Jackson</p>
               </div>
               <div className={classes.location}>
                 <p>
@@ -184,44 +172,9 @@ const Dashboard = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <div>
-              <form action="" method="POST" onSubmit={handleSubmit}>
-                <div className={classes.form_control}>
-                  <input
-                    type="text"
-                    placeholder="Add a task"
-                    name="taskname"
-                    value={tasks.taskname}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={classes.form_control}>
-                  <input
-                    type="time"
-                    value={tasks.time}
-                    name="time"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={classes.form_control}>
-                  <p style={{ marginTop: ".5rem" }}>Priority</p>
-                </div>
-                <div className={classes.form_control}>
-                  <select
-                    name="priority"
-                    id=""
-                    onChange={handleChange}
-                    value={tasks.priority}
-                  >
-                    <option value="High">High</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Low">Low</option>
-                  </select>
-                </div>
-              </form>
-            </div>
+            <ActivityForm handleClose={handleClose} />
           </Modal.Body>
-          <Modal.Footer>
+          {/* <Modal.Footer>
             <Button
               variant="primary"
               onClick={handleClose}
@@ -231,7 +184,7 @@ const Dashboard = () => {
             >
               Save
             </Button>
-          </Modal.Footer>
+          </Modal.Footer> */}
         </Modal>
       </div>
     </>
