@@ -1,0 +1,10 @@
+.taskbox {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  background: #e5e7eb;
+  padding: 0.35rem 0.45rem;
+  color: #4b5563;
+  margin: 0.5rem 0;
+}

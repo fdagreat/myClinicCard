@@ -4,7 +4,7 @@ const tasks = [];
 export const tasksReducer = (state = tasks, { type, payload }) => {
   switch (type) {
     case action_types.ADD_TASK:
-      return [...state, payload];
+      return [payload, ...state];
     case action_types.REMOVE_TASK:
       return state.filter((task) => task.id !== payload);
     default:

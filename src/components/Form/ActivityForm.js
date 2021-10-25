@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
 import { actionCreators } from "../../store/actions-creators";
 import classes from "./ActivityForm.module.css";
@@ -7,7 +7,6 @@ import classes from "./ActivityForm.module.css";
 const ActivityForm = ({ handleClose }) => {
   const dispatch = useDispatch();
   const { addTask } = bindActionCreators(actionCreators, dispatch);
-  const store = useSelector((store) => store);
 
   const [tasks, setTasks] = useState({
     taskname: "",
@@ -21,11 +20,18 @@ const ActivityForm = ({ handleClose }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addTask(tasks);
+
+    const newTask = {
+      id: new Date().getSeconds().toLocaleString(),
+      name: tasks.taskname,
+      time: tasks.time,
+      priority: tasks.priority,
+    };
+    addTask(newTask);
     handleClose();
   };
   // addTask(tasks);
-  console.log(store);
+
   return (
     <div>
       <div>

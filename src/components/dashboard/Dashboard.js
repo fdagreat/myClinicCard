@@ -10,10 +10,11 @@ import {
   IoLocationSharp,
 } from "react-icons/io5";
 import { RiSettings3Line, RiFunctionFill } from "react-icons/ri";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CalendarComponent from "../calendar/CalendarComponent";
 import ActivityForm from "../Form/ActivityForm";
+import TaskList from "../Tasks/TaskList";
 
 const Dashboard = () => {
   // hook to track url visited
@@ -33,6 +34,7 @@ const Dashboard = () => {
 
   // const store = useSelector((store) => store);
   // console.log(store);
+
   return (
     <>
       <div className={classes.grid}>
@@ -138,7 +140,9 @@ const Dashboard = () => {
               >
                 Health Activities Today
               </p>
-              <p>No activities for today!</p>
+              <div>
+                <TaskList />
+              </div>
             </div>
             <div className={classes["col-5"]}>
               <div>
