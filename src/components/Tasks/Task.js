@@ -1,19 +1,19 @@
 import React from "react";
 import classes from "./Task.module.css";
 
-const Task = ({ task }) => {
+const Task = ({ task, onRemove }) => {
   console.log(task);
   return (
     <div className={classes.taskbox}>
       <div
-        className="time"
-        style={{ paddingRight: ".5rem", borderRight: "1px solid #4B5563" }}
+        className={classes.time}
+        style={{ paddingRight: ".2rem", borderRight: "1px solid #4B5563" }}
       >
-        {task.time}
+        {task.fromTime} - {task.toTime}
       </div>
-      <div className="name">{task.name}</div>
-      <div className="checkbox">
-        <input type="checkbox" />
+      <div className={classes.name}>{task.name}</div>
+      <div className={classes.checkbox}>
+        <input type="checkbox" onClick={() => onRemove(task.id)} />
       </div>
     </div>
   );

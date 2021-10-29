@@ -10,7 +10,8 @@ const ActivityForm = ({ handleClose }) => {
 
   const [tasks, setTasks] = useState({
     taskname: "",
-    time: "00:00",
+    fromTime: "00:00",
+    toTime: "00:00",
     priority: "",
   });
   const handleChange = (event) => {
@@ -24,7 +25,8 @@ const ActivityForm = ({ handleClose }) => {
     const newTask = {
       id: new Date().getSeconds().toLocaleString(),
       name: tasks.taskname,
-      time: tasks.time,
+      fromTime: tasks.fromTime,
+      toTime: tasks.toTime,
       priority: tasks.priority,
     };
     addTask(newTask);
@@ -45,14 +47,31 @@ const ActivityForm = ({ handleClose }) => {
               onChange={handleChange}
             />
           </div>
-          <div className={classes.form_control}>
-            <input
-              type="time"
-              value={tasks.time}
-              name="time"
-              onChange={handleChange}
-            />
+          <div className={classes.duration}>
+            <div className={classes.form_control}>
+              <div>
+                <p>From</p>
+              </div>
+              <input
+                type="time"
+                value={tasks.fromTime}
+                name="fromTime"
+                onChange={handleChange}
+              />
+            </div>
+            <div className={classes.form_control}>
+              <div>
+                <p>To</p>
+              </div>
+              <input
+                type="time"
+                value={tasks.toTime}
+                name="toTime"
+                onChange={handleChange}
+              />
+            </div>
           </div>
+
           <div className={classes.form_control}>
             <p style={{ marginTop: ".5rem" }}>Priority</p>
           </div>

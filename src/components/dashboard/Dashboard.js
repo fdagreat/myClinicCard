@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import CalendarComponent from "../calendar/CalendarComponent";
 import ActivityForm from "../Form/ActivityForm";
 import TaskList from "../Tasks/TaskList";
+import Graph from "../Graph/Graph";
 
 const Dashboard = () => {
   // hook to track url visited
@@ -80,8 +81,7 @@ const Dashboard = () => {
               </div>
               <div style={{ marginTop: ".5rem", marginBottom: ".75rem" }}>
                 <p style={{ fontSize: ".9em" }}>
-                  Don't forgrt to add your activities to keep your day
-                  organised. Daily exercises are very important.
+                  Organise your day by adding today's to do lists.
                 </p>
               </div>
               <div style={{ marginTop: ".6rem" }}>
@@ -145,7 +145,7 @@ const Dashboard = () => {
               </div>
             </div>
             <div className={classes["col-5"]}>
-              <div>
+              <div style={{ marginBottom: "1rem" }}>
                 <h4
                   style={{
                     color: "#34d399",
@@ -156,7 +156,9 @@ const Dashboard = () => {
                   My Health Trends
                 </h4>
               </div>
-              <div>Display graph</div>
+              <div>
+                <Graph />
+              </div>
             </div>
           </div>
         </div>
