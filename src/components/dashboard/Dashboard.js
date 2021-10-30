@@ -16,6 +16,7 @@ import CalendarComponent from "../calendar/CalendarComponent";
 import ActivityForm from "../Form/ActivityForm";
 import TaskList from "../Tasks/TaskList";
 import Graph from "../Graph/Graph";
+import { IoAdd } from "react-icons/io5";
 
 const Dashboard = () => {
   // hook to track url visited
@@ -86,7 +87,18 @@ const Dashboard = () => {
               </div>
               <div style={{ marginTop: ".6rem" }}>
                 <button className={classes.btn} onClick={handleShow}>
-                  Add Activity
+                  Add Activity{" "}
+                  <span
+                    style={{
+                      padding: ".05rem",
+                      border: "2px solid #fff",
+                      marginLeft: ".5rem",
+                      borderRadius: 5,
+                      color: "#fff",
+                    }}
+                  >
+                    <IoAdd />
+                  </span>
                 </button>
               </div>
             </div>
