@@ -1,0 +1,39 @@
+.menu {
+  background-color: #fff;
+  padding: 0 2.5rem;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.menu_header,
+.menu_items {
+  padding: 2rem 0rem;
+}
+
+.menu_header p {
+  color: #34d399;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+.menu_lists {
+  list-style-type: none;
+}
+.menu__list_item {
+  margin: 1rem 0;
+  font-weight: 400;
+  padding: 0.55rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #444;
+  /* color: #34d399; */
+}
+.menu__list_item:hover {
+  color: #34d399;
+}
+.icon {
+  margin-right: 1rem;
+  font-size: 1.65em;
+}

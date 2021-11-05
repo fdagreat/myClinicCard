@@ -1,24 +1,14 @@
 import React, { useState } from "react";
-
-import { useHistory } from "react-router";
-import classes from "./Dashboard.module.css";
-import profileImage from "../../assets/avartar.jpg";
-import Menu from "../Menu/Menu";
-
-import { IoLogOutOutline, IoLocationSharp } from "react-icons/io5";
-
+import classes from "./ClinicReport.module.css";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import CalendarComponent from "../calendar/CalendarComponent";
-import ActivityForm from "../Form/ActivityForm";
-import TaskList from "../Tasks/TaskList";
-import Graph from "../Graph/Graph";
-import { IoAdd } from "react-icons/io5";
+import { useHistory } from "react-router";
+import { IoLogOutOutline, IoLocationSharp, IoAdd } from "react-icons/io5";
 
-const Dashboard = () => {
-  // hook to track url visited
+import Menu from "../Menu/Menu";
+
+const ClinicReport = () => {
   const history = useHistory();
-  //state to hold show or hide modal events and store tasks data
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -26,14 +16,9 @@ const Dashboard = () => {
   };
   const handleShow = () => setShow(true);
 
-  //function to logout user
   const handleSignout = () => {
-    history.goBack("/");
+    history.push("/");
   };
-
-  // const store = useSelector((store) => store);
-  // console.log(store);
-
   return (
     <>
       <div className={classes.grid}>
@@ -45,7 +30,7 @@ const Dashboard = () => {
             </span>
             Logout
           </div>
-          {/* menu items */}
+          {/* menu item lists */}
           <Menu />
         </div>
         {/* content column */}
@@ -88,7 +73,7 @@ const Dashboard = () => {
             </div>
             <div className={classes["col-2"]}>
               <div className={classes.profile_image}>
-                <img src={profileImage} alt="" />
+                {/* <img src={profileImage} alt="" /> */}
               </div>
               <div className={classes.info}>
                 <p>Alice Jackson</p>
@@ -124,7 +109,7 @@ const Dashboard = () => {
             </div>
             {/* col3 */}
             <div className={classes["col-3"]}>
-              <CalendarComponent />
+              {/* <CalendarComponent /> */}
             </div>
             <div className={classes["col-4"]}>
               <p
@@ -136,9 +121,7 @@ const Dashboard = () => {
               >
                 Health Activities Today
               </p>
-              <div>
-                <TaskList />
-              </div>
+              <div>{/* <TaskList /> */}</div>
             </div>
             <div className={classes["col-5"]}>
               <div style={{ marginBottom: "1rem" }}>
@@ -152,9 +135,7 @@ const Dashboard = () => {
                   My Health Trends
                 </h4>
               </div>
-              <div>
-                <Graph />
-              </div>
+              <div>{/* <Graph /> */}</div>
             </div>
           </div>
         </div>
@@ -174,7 +155,7 @@ const Dashboard = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <ActivityForm handleClose={handleClose} />
+            {/* <ActivityForm handleClose={handleClose} /> */}
           </Modal.Body>
           {/* <Modal.Footer>
             <Button
@@ -193,4 +174,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default ClinicReport;
