@@ -12,6 +12,8 @@ const ActivityForm = ({ handleClose }) => {
     taskname: "",
     fromTime: "00:00",
     toTime: "00:00",
+    fromDate: "",
+    toDate: "",
     priority: "",
   });
   const handleChange = (event) => {
@@ -27,6 +29,8 @@ const ActivityForm = ({ handleClose }) => {
       name: tasks.taskname,
       fromTime: tasks.fromTime,
       toTime: tasks.toTime,
+      fromDate: tasks.fromDate,
+      toDate: tasks.toDate,
       priority: tasks.priority,
     };
     addTask(newTask);
@@ -50,7 +54,7 @@ const ActivityForm = ({ handleClose }) => {
           <div className={classes.duration}>
             <div className={classes.form_control}>
               <div>
-                <p>From</p>
+                <p>From Time</p>
               </div>
               <input
                 type="time"
@@ -61,12 +65,36 @@ const ActivityForm = ({ handleClose }) => {
             </div>
             <div className={classes.form_control}>
               <div>
-                <p>To</p>
+                <p>To </p>
               </div>
               <input
                 type="time"
                 value={tasks.toTime}
                 name="toTime"
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className={classes.duration}>
+            <div className={classes.form_control}>
+              <div>
+                <p>From Date</p>
+              </div>
+              <input
+                type="date"
+                value={tasks.fromDate}
+                name="fromDate"
+                onChange={handleChange}
+              />
+            </div>
+            <div className={classes.form_control}>
+              <div>
+                <p>To Date</p>
+              </div>
+              <input
+                type="date"
+                value={tasks.toDate}
+                name="toDate"
                 onChange={handleChange}
               />
             </div>
