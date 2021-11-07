@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import classes from "./Dashboard.module.css";
 import profileImage from "../../assets/avartar.jpg";
 import Menu from "../Menu/Menu";
-
 import { IoLogOutOutline, IoLocationSharp } from "react-icons/io5";
-
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CalendarComponent from "../calendar/CalendarComponent";
@@ -16,8 +14,6 @@ import Graph from "../Graph/Graph";
 import { IoAdd } from "react-icons/io5";
 
 const Dashboard = () => {
-  // hook to track url visited
-  const history = useHistory();
   //state to hold show or hide modal events and store tasks data
   const [show, setShow] = useState(false);
 
@@ -26,25 +22,17 @@ const Dashboard = () => {
   };
   const handleShow = () => setShow(true);
 
-  //function to logout user
-  const handleSignout = () => {
-    history.goBack("/");
-  };
-
-  // const store = useSelector((store) => store);
-  // console.log(store);
-
   return (
     <>
       <div className={classes.grid}>
         {/* menu column */}
         <div className={classes.menu}>
-          <div className={classes.topbar} onClick={handleSignout}>
+          <Link to="/" className={classes.topbar}>
             <span>
               <IoLogOutOutline className={classes.icon} />
             </span>
             Logout
-          </div>
+          </Link>
           {/* menu items */}
           <Menu />
         </div>

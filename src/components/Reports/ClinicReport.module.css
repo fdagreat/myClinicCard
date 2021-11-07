@@ -208,10 +208,16 @@
 
 .topbar {
   text-align: left;
-  padding: 2rem 0.55rem;
+  padding: 2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #444;
+}
+.topbar:hover {
+  text-decoration: none;
+  color: #34d399;
 }
 
 /* Graph section */

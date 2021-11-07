@@ -17,7 +17,7 @@ const Menu = () => {
             <GoDiff className={classes.icon} />
             Clinic Report
           </Link>
-          <Link to="lean" className={classes.menu__list_item}>
+          <Link to="learn" className={classes.menu__list_item}>
             <GoLightBulb className={classes.icon} />
             Learn
           </Link>
