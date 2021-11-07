@@ -4,6 +4,7 @@ import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router";
 import { IoLogOutOutline, IoLocationSharp, IoAdd } from "react-icons/io5";
+import ActivityForm from "../Form/ActivityForm";
 
 import Menu from "../Menu/Menu";
 
@@ -155,7 +156,7 @@ const ClinicReport = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* <ActivityForm handleClose={handleClose} /> */}
+            <ActivityForm handleClose={handleClose} />
           </Modal.Body>
           {/* <Modal.Footer>
             <Button
