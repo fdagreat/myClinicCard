@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import classes from "./ClinicReport.module.css";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useHistory } from "react-router";
-import { IoLogOutOutline, IoLocationSharp, IoAdd } from "react-icons/io5";
+// import { useHistory } from "react-router";
+import { IoLogOutOutline } from "react-icons/io5";
 import ActivityForm from "../Form/ActivityForm";
 
 import Menu from "../Menu/Menu";
