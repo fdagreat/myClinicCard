@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import classes from "./ClinicReport.module.css";
 import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
 import { IoLogOutOutline } from "react-icons/io5";
+=======
+import { useHistory } from "react-router";
+import { IoLogOutOutline, IoLocationSharp, IoAdd } from "react-icons/io5";
+import ActivityForm from "../Form/ActivityForm";
+>>>>>>> f3e1d9e573b91534ec8a020b904fbf056ed09df8
 
 import Menu from "../Menu/Menu";
 
@@ -48,7 +54,7 @@ const ClinicReport = () => {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/* <ActivityForm handleClose={handleClose} /> */}
+            <ActivityForm handleClose={handleClose} />
           </Modal.Body>
           {/* <Modal.Footer>
             <Button
