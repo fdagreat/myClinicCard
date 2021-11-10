@@ -7,20 +7,20 @@ const Graph = () => {
       <Line
         data={{
           labels: [
-            "1st Month",
-            "2nd Month",
-            "3rd Month",
-            "4th Month",
-            "5th Month",
-            "6th Month",
-            "7th Month",
-            "8th Month",
-            "9th Month",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sept",
           ],
           datasets: [
             {
               label: "Body Weight [Kg]",
-              data: [55, 56, 58, 60, 61, 62],
+              data: [0, 0, 0, 60, 61, 62],
               backgroundColor: ["#6EE7B7"],
               borderColor: ["#6EE7B7"],
               fill: false,

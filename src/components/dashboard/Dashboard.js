@@ -42,14 +42,15 @@ const Dashboard = () => {
             <div className={classes["col-1"]}>
               <div className={classes.intro}>
                 <div>
-                  <p className={classes.name}>Hello Alice! 🙂</p>
+                  <p className={classes.name}>Hello Jane Doe! 🙂</p>
                 </div>
                 <div style={{ marginTop: ".5rem", marginBottom: ".75rem" }}>
                   <p style={{ fontSize: ".9em" }}>
-                    Organise your day by adding today's to do lists.
+                    Organise your day by adding activities to forcus on, step
+                    ahead and acomplish all of them today.
                   </p>
                 </div>
-                <div style={{ marginTop: ".6rem" }}>
+                <div style={{ marginTop: ".6rem", textAlign: "right" }}>
                   <button className={classes.btn} onClick={handleShow}>
                     Add Activity{" "}
                     <span
@@ -66,20 +67,20 @@ const Dashboard = () => {
                   </button>
                 </div>
               </div>
-              <div className={classes.updates}>
+              {/* <div className={classes.updates}>
                 <p>Next clinic will be on:</p>
                 <div className={classes.clinic_date}>
                   <span>November</span>
                   <span>02</span>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className={classes["col-2"]}>
               <div className={classes.profile_image}>
                 <img src={profileImage} alt="" />
               </div>
               <div className={classes.info}>
-                <p>Alice Jackson</p>
+                <p>Jane Doe</p>
               </div>
               <div className={classes.location}>
                 <p>
@@ -92,7 +93,7 @@ const Dashboard = () => {
                   >
                     <IoLocationSharp />
                   </span>
-                  Dar es Salaam
+                  Dar es Salaam, Tanzania
                 </p>
               </div>
               <div className={classes.badge}>
@@ -122,7 +123,7 @@ const Dashboard = () => {
                   fontSize: "1.05em",
                 }}
               >
-                Health Activities Today
+                Today's Activities
               </p>
               <div>
                 <TaskList />

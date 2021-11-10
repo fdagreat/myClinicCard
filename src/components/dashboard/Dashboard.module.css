@@ -103,7 +103,7 @@
   font-weight: 600;
 }
 .btn {
-  padding: 0.5rem 1.75rem !important;
+  padding: 0.5rem 2.5rem !important;
   cursor: pointer !important;
   border: none !important;
   background: #34d399 !important;
@@ -175,12 +175,13 @@
   border-radius: 5px;
 }
 .info {
-  font-size: 0.85em;
-  margin-bottom: 0.25rem;
+  font-size: 0.95em;
+  font-weight: 600;
+  margin-bottom: 0.05rem;
 }
 .location {
   font-size: 0.85em;
-  margin: 0.25rem;
+  margin: 0.05rem;
   font-weight: 600;
 }
 .badge {
