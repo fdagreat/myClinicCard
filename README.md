@@ -1,13 +1,14 @@
-# Getting Started with Create React App
+# DIGITAL CLINIC CARD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project intends to help pregnat women to keep track of their health throught the pregnacy phase. The application will share reproductive health tips, graphically visualize the body weight and blood level with colors to represent heatlth status of a mother and unborned child. Notifications will be
 
-## Available Scripts
+## CONTRIBUTION
 
-In the project directory, you can run:
+To contribute to this project , first read the how to contribute guideline. Fork and create the branch with meaning ful name, we recommend it to use your first or last name.
 
-### `yarn start`
+### TO RUN THE PROJECT LOCALY
 
+Clone the repo and type # `yarn start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
