@@ -8,7 +8,7 @@ To contribute to this project , first read the how to contribute guideline. Fork
 
 ### TO RUN THE PROJECT LOCALY
 
-Clone the repo and type # `yarn start`
+Clone the repo and type # `yarn start` or `npm start`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
