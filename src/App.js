@@ -5,7 +5,6 @@ import Signup from "./components/signup/Signup";
 import PageNotFound from "./components/404/PageNotFound";
 import Dashboard from "./components/dashboard/Dashboard";
 import ClinicReport from "./components/Reports/ClinicReport";
-import Learn from "./components/Learn/Learn";
 import Profile from "./components/Profile/Profile";
 
 function App() {
@@ -24,9 +23,6 @@ function App() {
           </Route>
           <Route path="/clinicreport">
             <ClinicReport />
-          </Route>
-          <Route path="/learn">
-            <Learn />
           </Route>
           <Route path="/profile">
             <Profile />

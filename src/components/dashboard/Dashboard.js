@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router";
 import classes from "./Dashboard.module.css";
 import profileImage from "../../assets/avartar.jpg";
 import Menu from "../Menu/Menu";
@@ -52,18 +51,17 @@ const Dashboard = () => {
                 </div>
                 <div style={{ marginTop: ".6rem", textAlign: "right" }}>
                   <button className={classes.btn} onClick={handleShow}>
-                    Add Activity{" "}
                     <span
                       style={{
                         padding: ".05rem",
-                        border: "2px solid #fff",
-                        marginLeft: ".5rem",
-                        borderRadius: 5,
+                        marginRight: "1rem",
                         color: "#fff",
+                        fontSize: "1.1rem",
                       }}
                     >
                       <IoAdd />
                     </span>
+                    Add Activity{" "}
                   </button>
                 </div>
               </div>

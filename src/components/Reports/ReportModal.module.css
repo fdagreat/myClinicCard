@@ -1,0 +1,97 @@
+.title_bar {
+  text-align: center;
+}
+.title_bar h3 {
+  font-size: 1.45rem;
+  margin: 0.5rem 0;
+}
+.title_bar p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+.heart_icon {
+  color: #34d399;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+/* modal Form */
+
+.body {
+  margin-top: 1.5rem;
+  padding: 1rem;
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.form_control {
+  margin-bottom: 0.75rem;
+}
+.label {
+  font-size: 0.9rem;
+  color: #262d33;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+.left_control {
+}
+.right_control {
+}
+.control {
+  width: 80%;
+  border: 1px solid #262d33;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem;
+}
+.input_box {
+  border: none;
+  flex: 1;
+  padding: 0.2rem 1rem;
+  font-size: 0.85rem;
+}
+.input_box:focus {
+  outline: none;
+}
+select.options {
+  width: 100%;
+  border: none;
+  color: #333;
+  padding: 0.2rem 1rem;
+}
+select.options:focus,
+select.options:hover {
+  outline: none;
+  border: none;
+}
+/* select option:hover {
+  background: #262d33;
+} */
+
+::selection {
+  background: #262d33;
+}
+.calendar {
+  color: #262d33;
+  font-size: 1.25rem;
+}
+
+/* control button */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.save_btn {
+  border: none;
+  padding: 0.5rem 4rem;
+  margin-right: 1rem;
+  background-color: #34d399;
+  color: #fff;
+}
+.cancel_btn {
+  border: none;
+  padding: 0.5rem 4rem;
+  background-color: #f43f5e;
+  color: #fff;
+}

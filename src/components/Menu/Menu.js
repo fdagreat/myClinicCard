@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classes from "./Menu.module.css";
 import { RiSettings3Line, RiFunctionFill } from "react-icons/ri";
-import { GoLightBulb, GoDiff } from "react-icons/go";
+import { GoDiff } from "react-icons/go";
 
 const Menu = () => {
   return (
@@ -17,11 +17,6 @@ const Menu = () => {
             <GoDiff className={classes.icon} />
             Clinic Report
           </Link>
-          <Link to="learn" className={classes.menu__list_item}>
-            <GoLightBulb className={classes.icon} />
-            Learn
-          </Link>
-
           <Link to="profile" className={classes.menu__list_item}>
             <RiSettings3Line className={classes.icon} />
             Profile

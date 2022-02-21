@@ -4,4 +4,6 @@ export const action_types = {
   SIGNOUT: "SIGNOUT",
   ADD_TASK: "ADD_TASK",
   REMOVE_TASK: "REMOVE_TASK",
+  ADD_REPORT: "ADD_REPORT",
+  ADD_WEIGHT: "ADD_WEIGHT",
 };

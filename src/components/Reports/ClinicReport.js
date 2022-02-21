@@ -9,8 +9,12 @@ import { IoLogOutOutline } from "react-icons/io5";
 import Menu from "../Menu/Menu";
 import ReportModal from "./ReportModal";
 import ReportCard from "./ReportCard";
+import { useSelector } from "react-redux";
 
 const ClinicReport = () => {
+  const reports = useSelector((state) => state.reports);
+
+  console.log(reports);
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -54,15 +58,22 @@ const ClinicReport = () => {
             </div>
             {/* cards section */}
             <section className={classes.card_grid}>
-              <ReportCard />
+              <div className={classes.left_col}>
+                <ReportCard />
+              </div>
+              <div className="right_col"></div>
             </section>
           </div>
         </div>
       </div>
       {/* modal component */}
       <div>
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          dialogClassName={classes.modalWidth}
+        >
+          {/* <Modal.Header closeButton>
             <Modal.Title
               style={{
                 fontSize: "1.05em",
@@ -70,11 +81,11 @@ const ClinicReport = () => {
                 color: "#34d399",
               }}
             >
-              Add New Activity
+            
             </Modal.Title>
-          </Modal.Header>
+          </Modal.Header> */}
           <Modal.Body>
-            <ReportModal handleClose={handleClose} />
+            <ReportModal handleClose={handleClose} onClose={handleClose} />
           </Modal.Body>
           {/* <Modal.Footer>
             <Button

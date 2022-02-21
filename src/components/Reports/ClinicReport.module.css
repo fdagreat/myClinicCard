@@ -116,9 +116,14 @@
 
 .card_grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 4fr 2fr;
   gap: 0.5rem;
   margin-top: 1rem;
+}
+.left_col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
 }
 .card_item {
   background-color: #fff;
@@ -168,4 +173,8 @@
 .topbar:hover {
   text-decoration: none;
   color: #34d399;
+}
+.modalWidth {
+  width: 60vw;
+  max-width: 60vw;
 }
