@@ -136,7 +136,7 @@ const Dashboard = () => {
                     fontSize: "1.25em",
                   }}
                 >
-                  My Health Trends
+                  Baby & Mother progress
                 </h4>
               </div>
               <div>

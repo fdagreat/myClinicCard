@@ -5,10 +5,13 @@
   margin-top: 1rem;
 }
 .card_item {
-  background-color: #fff;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
 }
 .date_data {
   background-color: #d1fae5;
+  /* background-color: #0ea5e9; */
   padding: 0.75rem;
 }
 .recomm_title {

@@ -2,34 +2,27 @@ import React from "react";
 import { FaCalendar } from "react-icons/fa";
 import classes from "./ReportCard.module.css";
 
-const ReportCard = () => {
+const ReportCard = ({ data }) => {
+  console.log(data);
   return (
     <div className={classes.card_item}>
       <div className={classes.date_data}>
         <FaCalendar className={classes.dateIcon} />{" "}
-        <span className={classes.date_value}>17th February 2022</span>
+        <span className={classes.date_value}>{data.clinicDate}</span>
       </div>
       <div className={classes.report_data}>
         <div className={classes.address}>
           <p>
-            Hospital: <span>Vijibweni Hospital</span>
+            Hospital: <span>{data.hospitalName}</span>
           </p>
           <p>
-            District: <span>Kigamboni</span>
-          </p>
-          <p>
-            City: <span>Dar es Salaam</span>
+            City: <span>{data.city}</span>
           </p>
         </div>
         <div>
-          <p className={classes.recomm_title}>Doctor Recommendations</p>
+          <p className={classes.recomm_title}>Doctor's Advise</p>
           <div className={classes.recommendations}>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-              aliquam molestias culpa nesciunt repellendus molestiae, tenetur
-              earum necessitatibus harum dolores illo quam ad adipisci, natus
-              quo! Blanditiis recusandae non repellendus!
-            </p>
+            <p>{data.doctorAdvise}</p>
           </div>
         </div>
       </div>

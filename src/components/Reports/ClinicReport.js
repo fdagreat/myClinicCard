@@ -13,8 +13,6 @@ import { useSelector } from "react-redux";
 
 const ClinicReport = () => {
   const reports = useSelector((state) => state.reports);
-
-  console.log(reports);
   const [show, setShow] = useState(false);
 
   const handleClose = () => {
@@ -59,7 +57,9 @@ const ClinicReport = () => {
             {/* cards section */}
             <section className={classes.card_grid}>
               <div className={classes.left_col}>
-                <ReportCard />
+                {reports.map((report) => (
+                  <ReportCard data={report} />
+                ))}
               </div>
               <div className="right_col"></div>
             </section>
