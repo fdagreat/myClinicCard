@@ -5,10 +5,6 @@ This project intends to help pregnat women to keep track of their health through
 ## CONTRIBUTION
 
 To contribute to this project , first read the how to contribute guideline. Fork and create the branch with meaning ful name, we recommend it to use your first or last name.
-### TO TEST THE PROJECT ONLINE 
-Visit the link below
-https://my-clinic-card.vercel.app/ 
-
 ### TO RUN THE PROJECT LOCALY
 
 Clone the repo and type # `yarn start` or `npm start`
