@@ -1,0 +1,36 @@
+.card_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.card_item {
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+.date_data {
+  background-color: #d1fae5;
+  /* background-color: #0ea5e9; */
+  padding: 0.75rem;
+}
+.recomm_title {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.recommendations {
+  font-size: 0.85rem;
+  text-align: justify;
+}
+.dateIcon {
+  color: #444;
+}
+.date_value {
+  font-size: 0.8rem;
+}
+.report_data {
+  padding: 0.85rem 0.75rem;
+}
+.address p {
+  font-size: 0.8rem;
+}

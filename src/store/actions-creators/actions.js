@@ -30,3 +30,14 @@ export const removeTask = (id) => {
     payload: id,
   };
 };
+
+export const addReport = (report) => {
+  return {
+    type: action_types.ADD_REPORT,
+    payload: report,
+  };
+};
+
+export const addBodyWeight = (weight) => {
+  return { type: action_types.ADD_WEIGHT, payload: weight };
+};

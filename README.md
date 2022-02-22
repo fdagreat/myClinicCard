@@ -21,4 +21,4 @@ You will also see any lint errors in the console.
 ### `Project UI`
 
 To contribute to this project , please take a look at the design so that the end product is consistent
-See the design [https://www.figma.com/file/v3qsndcm0eDjX4O0r6eqOp/ClinicCard?node-id=0%3A1].
+See the design [https://www.figma.com/file/nm3vAa3r9mA7D0EX63tdeG/ClinicCard-(Copy)?node-id=0%3A1].

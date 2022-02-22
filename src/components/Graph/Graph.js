@@ -1,26 +1,29 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import { useSelector } from "react-redux";
 
 const Graph = () => {
+  const bodyData = useSelector((state) => state.bodyWeight);
   return (
     <div style={{ width: "500px", height: "360px" }}>
       <Line
         data={{
           labels: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sept",
+            "1st month",
+            "2nd month",
+            "3rd month",
+            "4th month",
+            "5th month",
+            "6th month",
+            "7th month",
+            "8th month",
+            "9th month",
+            "10th month",
           ],
           datasets: [
             {
               label: "Body Weight [Kg]",
-              data: [0, 0, 0, 60, 61, 62],
+              data: bodyData,
               backgroundColor: ["#6EE7B7"],
               borderColor: ["#6EE7B7"],
               fill: false,
