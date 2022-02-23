@@ -218,10 +218,10 @@ const ReportModal = ({ onClose }) => {
         </div>
         <div className={classes.footer}>
           <button className={classes.save_btn} onClick={handleSubmit}>
-            Save
+            SAVE NOTE
           </button>
           <button className={classes.cancel_btn} onClick={onClose}>
-            Cancel
+            CANCEL
           </button>
         </div>
       </div>
