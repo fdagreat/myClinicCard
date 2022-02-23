@@ -38,12 +38,11 @@ const ClinicReport = () => {
           <div className={classes.main}>
             {/* top bar section */}
             <div className={classes.top_bar}>
-              <div className={classes.title}>Clinic Progress Reports</div>
+              <div className={classes.title}>Clinic Progress Notes</div>
               <div className={classes.avarta}>
                 <div className={classes.avarta_btn}>
                   <button onClick={handleShow}>
-                    <span className={classes.plus_icon}>+</span> Create New
-                    Report
+                    <span className={classes.plus_icon}>+</span> Create New Note
                   </button>
                 </div>
                 <div className={classes.user_data}>
@@ -61,7 +60,13 @@ const ClinicReport = () => {
                   <ReportCard data={report} />
                 ))}
               </div>
-              <div className="right_col"></div>
+              <div className="right_col">
+                <div className="vaccine_records">
+                  <div className="details">
+                    <span></span> Vaccine 1
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         </div>
