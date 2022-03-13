@@ -22,9 +22,6 @@ const TaskList = () => {
   today.setFullYear(yyyy);
   const todayDate = today.toISOString().slice(0, 10);
 
-  console.log("Todays Date: ",todayDate);
-
-
   const taskLists = store.map((task) => (
     // show only tasks whose deadline is greater than today
         task.toDate >= todayDate ? (

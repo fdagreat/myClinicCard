@@ -7,13 +7,18 @@ import classes from "./ActivityForm.module.css";
 const ActivityForm = ({ handleClose }) => {
   const dispatch = useDispatch();
   const { addTask } = bindActionCreators(actionCreators, dispatch);
+  const today = new Date();
+  const defaultFromDate = today.toISOString().slice(0, 10);
+  const defaultToDate = today.toISOString().slice(0, 10);
+  const defaultFromTime = today.toISOString().slice(11, 16);
+  const defaultToTime = today.toISOString().slice(11, 16);
 
   const [tasks, setTasks] = useState({
-    taskname: "",
-    fromTime: "00:00",
-    toTime: "00:00",
-    fromDate: "",
-    toDate: "",
+    taskName: "Task Name",
+    fromTime: defaultFromTime,
+    toTime: defaultToTime,
+    fromDate: defaultFromDate,
+    toDate: defaultToDate,
     priority: "",
   });
   const handleChange = (event) => {
@@ -24,9 +29,10 @@ const ActivityForm = ({ handleClose }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // addTask(tasks);
     const newTask = {
       id: new Date().getSeconds().toLocaleString(),
-      name: tasks.taskname,
+      name: tasks.taskName,
       fromTime: tasks.fromTime,
       toTime: tasks.toTime,
       fromDate: tasks.fromDate,
@@ -36,7 +42,6 @@ const ActivityForm = ({ handleClose }) => {
     addTask(newTask);
     handleClose();
   };
-  // addTask(tasks);
 
   return (
     <div>
@@ -46,8 +51,8 @@ const ActivityForm = ({ handleClose }) => {
             <input
               type="text"
               placeholder="Add a task"
-              name="taskname"
-              value={tasks.taskname}
+              name="taskName"
+              value={tasks.taskName}
               onChange={handleChange}
             />
           </div>
